@@ -7,36 +7,60 @@ function DestinationPage() {
 
   return (
     <div className="h-dvh bg-[url('/assets/destination/background-destination-mobile.jpg')] bg-cover bg-center bg-no-repeat sm:bg-[url('/assets/destination/background-destination-tablet.jpg')] md:bg-[url('/assets/destination/background-destination-desktop.jpg')]">
-      <div className="flex h-full flex-col items-center justify-center">
-        <div className="mb-4 flex gap-4 text-blue-50">
-          {destination.map((dest) => (
-            <button
-              key={dest.name}
-              onClick={() => setCurrent(dest)}
-              className={`tracking-widest uppercase ${
-                current.name === dest.name
-                  ? "border-b-2 border-white py-2"
-                  : "opacity-70"
-              }`}
-            >
-              {dest.name}
-            </button>
-          ))}
+      <div className="flex h-full flex-col items-center justify-center gap-1 md:flex-row">
+        <div className="flex basis-1/2 flex-col items-center justify-center">
+          <p className="mb-2 space-x-2 text-xl font-medium text-blue-100/80 uppercase md:m-6 md:self-start md:text-2xl">
+            <span className="font-bold text-blue-100/50">01</span>
+            <span>pick your destination</span>
+          </p>
+          <img
+            className="h-40 w-40 md:h-120 md:w-120"
+            src={current.images.png}
+            alt={`The image of ${current.name}`}
+          />
         </div>
 
-        <div className="text-white">
-          <div className="text-6xl">{current.name}</div>
-          <div className="divide divide-y-4 divide-amber-300">
-            {current.description}
+        {/*  */}
+        <div className="flex basis-1/2 flex-col items-center justify-center px-8 text-center sm:px-30 md:items-start">
+          <div className="mb-4 flex gap-4 text-sm text-blue-50">
+            {destination.map((dest) => (
+              <button
+                key={dest.name}
+                onClick={() => setCurrent(dest)}
+                className={`cursor-pointer border-b-2 py-2 tracking-widest uppercase hover:border-blue-100 ${
+                  current.name === dest.name
+                    ? " border-blue-50 "
+                    : " border-transparent opacity-70"
+                }`}
+              >
+                {dest.name}
+              </button>
+            ))}
           </div>
-          <div>
-            <div>
-              <span>AVG. Distance</span>
-              <span>{current.distance}</span>
+
+          <div className="text-white md:text-start">
+            <div className="mb-2 text-5xl font-medium uppercase md:mb-8 md:text-7xl">
+              {current.name}
             </div>
-            <div>
-              <span>Est. Travel Time</span>
-              <span>{current.travel}</span>
+            <div className="mb-2 border-b border-blue-50/40 py-2 pb-4 text-sm text-blue-100/80 md:mb-8 md:text-lg">
+              {current.description}
+            </div>
+            <div className="flex flex-col items-center justify-around uppercase sm:flex-row md:justify-start md:gap-10">
+              <div className="mb-2 md:mb-0">
+                <span className="text-sm font-light text-blue-100/70">
+                  AVG. Distance
+                </span>
+                <br />
+                <span className="text-2xl">{current.distance}</span>
+              </div>
+
+              <div className="text-sm font-light">
+                <span className="font-light text-blue-100/70">
+                  Est. Travel Time
+                </span>
+                <br />
+                <span className="text-2xl">{current.travel}</span>
+              </div>
             </div>
           </div>
         </div>
