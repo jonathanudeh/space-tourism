@@ -5,9 +5,7 @@ function AppLayout() {
   return (
     <div className="relative grid h-dvh grid-rows-[auto_1fr]">
       <Header />
-      <div className="">
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
   );
 }

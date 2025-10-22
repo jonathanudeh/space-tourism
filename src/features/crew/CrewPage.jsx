@@ -34,7 +34,7 @@ function CrewPage() {
               <li
                 key={member.role}
                 onClick={() => setCurrent(member)}
-                className={`h-3 w-3 cursor-pointer rounded-full bg-blue-100/30 hover:bg-blue-50 ${current.role === member.role ? "bg-white" : ""}`}
+                className={`h-3 w-3 cursor-pointer rounded-full hover:bg-blue-50 ${current.role === member.role ? "bg-white" : "bg-blue-100/30"}`}
               ></li>
             ))}
           </ul>
