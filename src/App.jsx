@@ -4,7 +4,7 @@ import ErrorPage from "./ui/ErrorPage";
 import DestinationPage from "./features/destination/DestinationPage";
 import CrewPage from "./features/crew/CrewPage";
 import TechnologyPage from "./features/technology/TechnologyPage";
-import HomePage from "./features/home/HomePage";
+import HomePage from "./features/home/Home";
 
 function App() {
   const router = createBrowserRouter([
